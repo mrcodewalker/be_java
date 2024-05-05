@@ -1,0 +1,12 @@
+<h1>Subjects Virtual Filter</h1>
+<div style="width: 700px">
+  <mat-calendar
+    [selected]="selectedDate"
+    (selectedChange)="dateSelected($event)">
+  </mat-calendar>
+  <div *ngIf="startDay && endDay">
+    <p>Start Day: {{ startDay }}</p>
+    <p>End Day: {{ endDay }}</p>
+  </div>
+
+</div>

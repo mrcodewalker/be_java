@@ -1,3 +1,4 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
 .navbar {
   flex-direction: row !important;
 }
@@ -358,6 +359,7 @@ body{
   padding: 8px 16px!important; /* Đặt khoảng cách giữa nội dung và viền của nút */
   border-radius: 4px!important; /* Đặt góc bo tròn cho nút */
   margin-left: auto!important; /* Đẩy nút sang bên phải cùng */
+  margin-top: 5px;
 }
 .select-choice{
   margin-top: 10px;
@@ -468,4 +470,74 @@ body{
 
 .gpa, .ranking {
   font-size: 18px !important;
+}
+.people-button {
+  /* Định dạng kích thước và vị trí của nút */
+  width: 150px; /* Điều chỉnh kích thước của nút */
+  height: 40px; /* Điều chỉnh chiều cao của nút */
+  /* Màu nền xanh dương */
+  background-color: #007bff;
+  /* Khoảng cách giữa nút và nút khác */
+  margin-right: 10px; /* Khoảng cách phải */
+  margin-bottom: 10px; /* Khoảng cách dưới */
+  /* Thiết lập vị trí của nút */
+  position: relative;
+  /* Căn giữa nút trong phần tử cha */
+  display: inline-block;
+  /* Căn giữa nút theo chiều dọc và chiều ngang */
+  text-align: center;
+  vertical-align: middle;
+  /* Căn giữa nút trong phần tử cha */
+  margin: 0 auto;
+  /* CSS cho văn bản trong nút */
+  color: #ffffff; /* Màu văn bản là trắng */
+  font-size: 16px; /* Kích thước phông chữ */
+  line-height: 40px; /* Chiều cao của dòng chữ */
+  /* Hiệu ứng hover */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  text-align: left;
+}
+
+/* CSS cho hiệu ứng hover */
+.people-button:hover {
+  background-color: #0056b3; /* Màu nền xanh dương sáng khi di chuột vào */
+}
+/* CSS cho nút people-button */
+.people-button {
+  /* Định dạng kích thước và vị trí của nút */
+  width: 100%; /* Chiếm toàn bộ chiều rộng của phần tử cha */
+  height: 30px; /* Điều chỉnh chiều cao của nút */
+  /* CSS cho văn bản trong nút */
+  color: #ffffff; /* Màu văn bản là trắng */
+  font-size: 14px; /* Kích thước phông chữ */
+  /* Màu nền xanh dương */
+  background-color: #007bff;
+  /* Bo góc của nút */
+  border-radius: 5px;
+  /* Hiệu ứng hover */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+/* CSS cho nút cancel-button */
+
+/* CSS cho hiệu ứng hover */
+.people-button:hover{
+  background-color: #0056b3; /* Màu nền xanh dương sáng khi di chuột vào */
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fa-spinner {
+  font-size: 40px; /* Điều chỉnh kích thước spinner */
+  color: #333; /* Màu của spinner */
 }

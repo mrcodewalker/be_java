@@ -18,6 +18,9 @@
 
 </head>
 <body>
+<div *ngIf="loading" class="loading-overlay">
+  <i class="fas fa-spinner fa-spin"></i> <!-- Sử dụng biểu tượng spinner -->
+</div>
 <div class="student-card-container">
   <div class="student-card" *ngFor="let ranking of this.topRanking">
     <div *ngIf="ranking.ranking === 2" class="avatar" style="margin-top: 50px">
@@ -61,6 +64,26 @@
       </div>
       <button class="main-search-button icon-search" (click)="fetchData()"></button>
       <div class="search-history">
+        <div class="row" style="margin-left: 5px">
+          <select [(ngModel)]="selectedGrade">
+            <option value="Xếp hạng khóa">Xếp hạng khóa</option>
+            <option value="Xếp hạng khối">Xếp hạng khối</option>
+            <option value="Xếp hạng trường">Xếp hạng trường</option>
+            <option value="Xếp hạng lớp">Xếp hạng lớp</option>
+            <option value="Xếp hạng chuyên nghành">Xếp hạng chuyên nghành</option>
+            <option value="Xếp hạng theo kì">Xếp hạng theo kì (gần nhất)</option>
+          </select>
+          <!-- Nút people chiếm 2 cột -->
+<!--          <div class="col-6">-->
+<!--            <button class="icon-people people-button"  (click)="this.classRanking=true; this.schoolRanking=false; alert('cc'); this.hitButton=false">Xếp hạng khối</button>-->
+<!--          </div>-->
+<!--          <div class="col-6">-->
+<!--            <button class="icon-people people-button" (click)="this.classRanking=false; this.schoolRanking=true; this.hitButton=false">Xếp hạng trường</button>-->
+<!--          </div>-->
+          <!-- Nút cancel chiếm 1 cột -->
+<div class="col-2"></div>
+<!--          <div class="col-6"></div>-->
+        </div>
         <button class="icon-cancel cancel-button" (click)="this.hitButton=false"></button>
         <h5 class="icon-youtube_searched_for"> Lịch sử tìm kiếm</h5>
         <div class="container-fluid searched" [ngClass]="{'horizontal': searched.length > 3}">
@@ -98,7 +121,7 @@
             </svg>
           </div>
           <div class="stat-title">Số môn đã hoàn thành</div>
-          <div class="stat-value text-success">{{id}}</div>
+          <div class="stat-value text-success">{{this.id-this.subjectsFailed}}</div>
         </div>
         <div class="stat failed-subjects" style="margin-top: 10px">
           <div class="stat-figure text-secondary">
@@ -147,8 +170,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" *ngFor="let score of scores; let i = index" [ngClass]="{ 'failed-row': score.score_text === 'F' ,
-         'success-row': score.score_text!=='F'}">
+        <tr scope="row" *ngFor="let score of scores; let i = index" [ngClass]="{ 'failed-row': score.score_text === 'F'||score.score_final <4 ,
+         'success-row': score.score_text!=='F' && score.score_final>=4}">
           <td>
             {{ i + 1 }}
             {{ this.patchValue(i + 1)}}

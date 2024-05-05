@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss",
+              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
             ],
             "scripts": []
           },
@@ -69,6 +71,13 @@
             },
             "development": {
               "browserTarget": "kma_angular:build:development"
+            },
+            "options": {
+              "port": 4200,
+              "disableHostCheck": true,
+              "allowedHosts": [
+                ".ngrok.io"
+              ]
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +102,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss",
+              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
             ],
             "scripts": []
           }
